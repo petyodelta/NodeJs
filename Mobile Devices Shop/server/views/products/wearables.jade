@@ -1,0 +1,17 @@
+extends  ../shared/layout
+
+block main-content
+    .row
+        .col-md-12
+            .panel.panel-primary
+                .panel-heading
+                    h3.panel-title.text-center= title
+    .row
+        each item in data
+            .col-md-4
+                .panel.panel-info
+                    .panel-heading.text-center= item.manufacturer + ' ' + item.model
+                    .panel-body.text-center
+                        div= item.price
+                            span $
+

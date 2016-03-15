@@ -1,0 +1,38 @@
+doctype
+html
+    head
+        title Mobile Shop
+        link(rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css")
+        link(rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap-theme.min.css")
+        link(rel="stylesheet" href="/css/site.css")
+    body
+        header.nav.navbar-inverse
+            .container
+                .navbar-header
+                    a.navbar-brand(href="/") Mobile Shop
+                .navbar-collapse.collapse
+                    ul.nav.navbar-nav
+                        each cat in [{path: '/', name: 'Home'},{path: '/phones', name: 'Phones'},{path: '/tablets', name: 'Tablets'},{path: '/wearables', name: 'Wearables'}]
+                            li
+                                a(href=cat.path)= cat.name
+                    ul.nav.navbar-nav.navbar-right
+                        if (currentUser)
+                            li
+                                a(href="/profile") #{currentUser.username}
+                            li
+                                a(href="/logout") Logout
+                        else
+                            li
+                                a(href="/register") Register
+                            li
+                                a(href="/login") Login
+        .container
+            if (errorMessage)
+                .alert.alert-danger #{errorMessage}
+            block main-content
+
+        footer
+            p.text-center
+                | &copy; Telerik Academy 2016
+
+        include scripts

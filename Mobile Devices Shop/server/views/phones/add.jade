@@ -1,0 +1,21 @@
+extends ../shared/layout
+block main-content
+    .container
+        form(method='post' class="form-horizontal")
+            fieldset
+                legend Add new phone
+                .form-group
+                    label(for="manufacturer" class="control-label") Manufacturer
+                    input(id="manufacturer" class="form-control" type="text" name="manufacturer" placeholder="Manufacturer")
+                .form-group
+                    label(for="model" class="control-label") Model
+                    input(id="model" class="form-control" type="text" name="model" placeholder="Model")
+                .form-group
+                    label(for="price" class="control-label") Price
+                    input(id="price" class="form-control" type="number" name="price" placeholder="Price")
+                .form-group
+                    input(type="submit" class="btn btn-primary" value="Add")
+
+
+
+
